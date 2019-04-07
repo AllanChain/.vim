@@ -1,0 +1,18 @@
+[submodule "pack/dist/start/ale"]
+	path = pack/dist/start/ale
+	url = https://github.com/w0rp/ale.git
+[submodule "pack/dist/start/commentary"]
+	path = pack/dist/start/commentary
+	url = https://tpope.io/vim/commentary.git
+[submodule "pack/dist/start/vim-airline"]
+	path = pack/dist/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+[submodule "pack/dist/start/vim-airline-themes"]
+	path = pack/dist/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "pack/dist/start/indentLine"]
+	path = pack/dist/start/indentLine
+	url = https://github.com/Yggdroot/indentLine.git
+[submodule "pack/dist/start/VimCompletesMe"]
+	path = pack/dist/start/VimCompletesMe
+	url = https://github.com/ajh17/VimCompletesMe.git
