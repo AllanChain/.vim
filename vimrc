@@ -84,7 +84,7 @@ let g:airline_skip_empty_sections = 1
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 "}}}
-" " 隐藏warning,error{{{
+" 隐藏warning,error{{{
 let g:airline#extensions#default#section_truncate_width = {
     \ 'warning': 80,
     \ 'error': 80,
