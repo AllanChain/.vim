@@ -16,3 +16,9 @@
 [submodule "pack/dist/start/VimCompletesMe"]
 	path = pack/dist/start/VimCompletesMe
 	url = https://github.com/ajh17/VimCompletesMe.git
+[submodule "pack/dist/start/nerdtree"]
+	path = pack/dist/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "pack/dist/start/vim-gitgutter"]
+	path = pack/dist/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
