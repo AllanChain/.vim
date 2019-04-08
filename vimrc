@@ -144,14 +144,8 @@ func! RunPro()
 endfunc
 "}}}
 " ALE设置{{{
-" let g:ale_open_list = 1
-" let g:ale_list_window_size = 3
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-" let g:ale_loclist_msg_format = '%s'
-" let g:ale_echo_msg_format = '%s'
 let g:ale_linters = {
-\   'python': ['flake8', 'yapf', 'pyflakes', 'pylint'],
+\   'python': ['flake8', 'pyflakes', 'pylint'],
 \}
 let g:ale_fixers = {
 \   'python': ['autopep8', 'yapf', 'isort'],
