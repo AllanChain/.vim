@@ -48,6 +48,7 @@ if winwidth('%') > 60
     exec 'pa undotree'
     map <F5> :call RunPro()<CR>
     imap <F5> <Esc>:call RunPro()<CR>
+    imap <C-v> <Esc>"+pa
 else
     let mapleader="~"
     imap <leader>'' ``<Left>
