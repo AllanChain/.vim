@@ -1,4 +1,5 @@
 set nocompatible
+source /usr/share/vim/vim81/defaults.vim
 " 设置编码
 set encoding=utf-8
 set fileencodings=utf-8,gb18030,gbk,ucs-bom,cp936
@@ -42,6 +43,10 @@ set foldmethod=marker
 colorscheme NeoSolarized
 set updatetime=700
 
+if winwidth('%') > 60
+    set nu
+    exec 'pa undotree'
+endif
 " 设置gitgutter颜色{{{
 "let g:gitgutter_override_sign_column_highlight = 0
 "highlight SignColumn ctermbg=0
