@@ -150,7 +150,7 @@ let g:ale_set_quickfix = 1
 " let g:ale_loclist_msg_format = '%s'
 " let g:ale_echo_msg_format = '%s'
 let g:ale_linters = {
-\   'python': ['yapf', 'pyflakes', 'pylint'],
+\   'python': ['flake8', 'yapf', 'pyflakes', 'pylint'],
 \}
 let g:ale_fixers = {
 \   'python': ['autopep8', 'yapf', 'isort'],
