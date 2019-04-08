@@ -46,6 +46,14 @@ set updatetime=700
 if winwidth('%') > 60
     set nu
     exec 'pa undotree'
+    map <F5> :call RunPro()<CR>
+    imap <F5> <Esc>:call RunPro()<CR>
+else
+    let mapleader="~"
+    imap <leader>'' ``<Left>
+    imap <leader>'p ```python<CR><CR>```<Up>
+    map <leader>r :call RunPro()<CR>
+    imap <leader>r <Esc>:call RunPro()<CR>
 endif
 " 设置gitgutter颜色{{{
 "let g:gitgutter_override_sign_column_highlight = 0
@@ -91,10 +99,10 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 "}}}
 " 隐藏warning,error{{{
 let g:airline#extensions#default#section_truncate_width = {
-    \ 'warning': 80,
-    \ 'error': 80,
-    \ 'x': 80,
-    \ 'y': 80}
+    \ 'warning': 60,
+    \ 'error': 60,
+    \ 'x': 60,
+    \ 'y': 60}
 "}}}
 " 设置Airline模式别名{{{
 let g:airline_mode_map = {
@@ -114,9 +122,6 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 "}}}
 "Quickly Run{{{
-let mapleader="~"
-map <leader>r :call RunPro()<CR>
-imap <leader>r <Esc>:call RunPro()<CR>
 func! RunPro()
     exec "w"
     if &filetype == 'c'
@@ -129,13 +134,10 @@ func! RunPro()
         exec "!javac %"
         exec "!time java %<"
     elseif &filetype == 'sh'
-        :!time bash %
+        exec "!time bash %"
     elseif &filetype == 'python'
         exec "!time python %"
-    elseif &filetype == 'html'
-        exec "!termux-open-url %{getcwd()}/%"
     elseif &filetype == 'go'
-"       exec "!go build %<"
         exec "!time go run %"
     endif
 endfunc
