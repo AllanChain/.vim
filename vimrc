@@ -1,5 +1,4 @@
 set nocompatible
-source /usr/share/vim/vim81/defaults.vim
 " 设置编码
 set encoding=utf-8
 set fileencodings=utf-8,gb18030,gbk,ucs-bom,cp936
@@ -44,6 +43,7 @@ colorscheme NeoSolarized
 set updatetime=700
 
 if winwidth('%') > 60
+    source /usr/share/vim/vim81/defaults.vim
     set nu
     exec 'pa undotree'
     map <F5> :call RunPro()<CR>
