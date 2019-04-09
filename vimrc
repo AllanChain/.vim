@@ -28,6 +28,8 @@ set backupdir=~/.vim_temp/
 "}}}
 set cursorcolumn
 set cursorline
+let g:indentLine_concealcursor=""
+let g:indentLine_conceallevel=0
 
 set foldmethod=marker
 " 设置手动折叠保存{{{
