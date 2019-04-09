@@ -25,3 +25,6 @@
 [submodule "pack/dist/opt/undotree"]
 	path = pack/dist/opt/undotree
 	url = https://github.com/mbbill/undotree.git
+[submodule "pack/dist/start/mru"]
+	path = pack/dist/start/mru
+	url = https://github.com/yegappan/mru.git
