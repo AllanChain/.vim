@@ -28,3 +28,6 @@
 [submodule "pack/dist/start/mru"]
 	path = pack/dist/start/mru
 	url = https://github.com/yegappan/mru.git
+[submodule "pack/dist/start/vim-startify"]
+	path = pack/dist/start/vim-startify
+	url = https://github.com/mhinz/vim-startify.git
