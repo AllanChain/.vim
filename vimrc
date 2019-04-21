@@ -69,6 +69,7 @@ let g:indentLine_color_term = 239
 " VimCompletesMe设置{{{
 " 不指定omni,使vcm自动尝试字典补全等
 " autocmd FileType python let b:vcm_tab_complete = 'omni'
+autocmd FileType html let b:vcm_tab_complete = 'omni'
 autocmd FileType vim let b:vcm_tab_complete = 'vim'
 au FileType python setlocal complete+=k~/.vim/words/python.txt
 "}}}
@@ -155,3 +156,20 @@ let g:ale_fixers = {
 let g:ale_completion_enabled = 0
 let g:ale_fix_on_save = 1
 "}}}
+" html自动js,css补全{{{
+au FileType html setlocal omnifunc=MyHTMLComplete
+function! MyHTMLComplete(findstart, base)
+	for id in synstack(line('.'), col('.'))
+        let lang_type=synIDattr(id, 'name')
+		if lang_type =~? 'javascript'
+            return javascriptcomplete#CompleteJS(a:findstart,a:base)
+			break
+        elseif lang_type =~? 'css'
+            return csscomplete#CompleteCSS(a:findstart,a:base)
+			break
+        elseif lang_type =~? 'html'
+            return htmlcomplete#CompleteTags(a:findstart,a:base)
+			break
+		endif
+	endfor
+endfunction"}}}
