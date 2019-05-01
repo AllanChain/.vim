@@ -154,7 +154,8 @@ let g:ale_fixers = {
 \   'python': ['autopep8', 'yapf', 'isort'],
 \}
 let g:ale_completion_enabled = 0
-let g:ale_fix_on_save = 1
+let g:ale_lint_on_enter = 0
+" let g:ale_fix_on_save = 1
 "}}}
 " html自动js,css补全{{{
 au FileType html setlocal omnifunc=MyHTMLComplete
