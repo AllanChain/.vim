@@ -57,6 +57,7 @@ else
     imap <leader>'p ```python<CR><CR>```<Up>
     map <leader>r :call RunPro()<CR>
     imap <leader>r <Esc>:call RunPro()<CR>
+    map <leader>f :ALEFix<CR>:w<CR>
 endif
 " 设置gitgutter颜色{{{
 "let g:gitgutter_override_sign_column_highlight = 0
@@ -154,7 +155,7 @@ let g:ale_fixers = {
 \   'python': ['autopep8', 'yapf', 'isort'],
 \}
 let g:ale_completion_enabled = 0
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 "}}}
 " html自动js,css补全{{{
 au FileType html setlocal omnifunc=MyHTMLComplete
