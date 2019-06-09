@@ -23,9 +23,9 @@ set autowrite
 set undofile
 set swapfile
 set backup
-set undodir=~/.vim_temp/
-set directory=~/.vim_temp/
-set backupdir=~/.vim_temp/
+set undodir=$HOME/.vim_temp/
+set directory=$HOME/.vim_temp/
+set backupdir=$HOME/.vim_temp/
 "}}}
 set cursorcolumn
 set cursorline
@@ -155,6 +155,7 @@ let g:ale_fixers = {
 \   'python': ['autopep8', 'yapf', 'isort'],
 \}
 let g:ale_completion_enabled = 0
+let g:ale_lint_on_enter = 0
 " let g:ale_fix_on_save = 1
 "}}}
 " html自动js,css补全{{{
