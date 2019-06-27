@@ -20,6 +20,7 @@ set showcmd
 "set nobackup
 "set nowritebackup
 set autowrite
+set autoread
 set undofile
 set swapfile
 set backup
