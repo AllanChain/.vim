@@ -61,6 +61,11 @@ else
     imap <leader>r <Esc>:call RunPro()<CR>
     map <leader>f :ALEFix<CR>
 endif
+
+if has("gui_running")
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+endif
 " 设置gitgutter颜色{{{
 "let g:gitgutter_override_sign_column_highlight = 0
 "highlight SignColumn ctermbg=0
