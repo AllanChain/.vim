@@ -52,12 +52,14 @@ if winwidth('%') > 60
     map <F5> :call RunPro()<CR>
     imap <F5> <Esc>:call RunPro()<CR>
     imap <C-v> <Esc>"+pa
+    map <C-S> :ALEFix<CR>
 else
     let mapleader="~"
     imap <leader>'' ``<Left>
     imap <leader>'p ```python<CR><CR>```<Up>
     map <leader>r :call RunPro()<CR>
     imap <leader>r <Esc>:call RunPro()<CR>
+    map <leader>f :ALEFix<CR>
 endif
 " 设置gitgutter颜色{{{
 "let g:gitgutter_override_sign_column_highlight = 0
