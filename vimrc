@@ -7,10 +7,18 @@ set termencoding=utf-8
 " 设置Tab键的宽度{{{
 set autoindent
 set smartindent
-set tabstop=4 " 统一缩进为4
-set shiftwidth=4 "自动缩进长度
 set expandtab " Tab转空格
-set softtabstop=4
+autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set ai
+autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set sw=4
+autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set ts=4
+autocmd FileType php,python,c,java,perl,shell,bash,vim,ruby,cpp set sts=4
+autocmd FileType javascript,html,css,xml set ai
+autocmd FileType javascript,html,css,xml set sw=2
+autocmd FileType javascript,html,css,xml set ts=2
+autocmd FileType javascript,html,css,xml set sts=2
+" set tabstop=4 " 统一缩进为4
+" set shiftwidth=4 "自动缩进长度
+" set softtabstop=4
 "}}}
 " set nowrap "不自动折行
 set mouse=a
