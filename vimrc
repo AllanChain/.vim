@@ -144,28 +144,21 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 "}}}
 "Quickly Run{{{
-if has("gui_running")
-    let g:timeit="!"
-else
-    let g:timeit="!time "
-endif
 func! RunPro()
     exec "w"
     if &filetype == 'c'
-        exec "!g++ % -o %<"
-        exec g:timeit . "./%<"
+        exec "!g++ % -o %< && %<"
     elseif &filetype == 'cpp'
-        exec "!g++ % -o %<"
-        exec g:timeit . "./%<"
+        exec "!g++ % -o %< && %<"
     elseif &filetype == 'java'
         exec "!javac %"
-        exec g:timeit . "java %<"
+        exec "java %<"
     elseif &filetype == 'sh'
-        exec g:timeit . "bash %"
+        exec "bash %"
     elseif &filetype == 'python'
-        exec g:timeit . "python %"
+        exec "python %"
     elseif &filetype == 'go'
-        exec g:timeit . "go run %"
+        exec "go run %"
     endif
 endfunc
 "}}}
