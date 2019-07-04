@@ -152,13 +152,13 @@ func! RunPro()
         exec "!g++ % -o %< && %<"
     elseif &filetype == 'java'
         exec "!javac %"
-        exec "java %<"
+        exec "!java %<"
     elseif &filetype == 'sh'
-        exec "bash %"
+        exec "!bash %"
     elseif &filetype == 'python'
-        exec "python %"
+        exec "!python %"
     elseif &filetype == 'go'
-        exec "go run %"
+        exec "!go run %"
     endif
 endfunc
 "}}}
