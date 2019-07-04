@@ -194,3 +194,10 @@ function! MyHTMLComplete(findstart, base)
 		endif
 	endfor
 endfunction"}}}
+if has("python3")
+    exec 'pa vim-snippets'
+    exec 'pa ultisnips'
+    let g:UltiSnipsExpandTrigger="<c-z>"
+    let g:UltiSnipsJumpForwardTrigger="<c-p>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+endif

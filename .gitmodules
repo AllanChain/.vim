@@ -34,3 +34,9 @@
 [submodule "pack/dist/start/cheat.sh-vim"]
 	path = pack/dist/start/cheat.sh-vim
 	url = https://github.com/dbeniamine/cheat.sh-vim
+[submodule "pack/dist/opt/ultisnips"]
+	path = pack/dist/opt/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule "pack/dist/opt/vim-snippets"]
+	path = pack/dist/opt/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
