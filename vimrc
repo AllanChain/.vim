@@ -2,7 +2,7 @@ set nocompatible
 source $VIMRUNTIME/defaults.vim
 " 设置编码
 set encoding=utf-8
-set fileencodings=utf-8,gb18030,gbk,ucs-bom,cp936
+set fileencodings=utf-8,gbk,gb18030,ucs-bom,cp936
 set termencoding=utf-8
 " 设置Tab键的宽度{{{
 set autoindent
@@ -58,14 +58,15 @@ if winwidth('%') > 60
     map <F5> :call RunPro()<CR>
     imap <F5> <Esc>:call RunPro()<CR>
     imap <C-v> <Esc>"+pa
-    map <C-S> :ALEFix<CR>
+    map <C-s> :w<CR>
+    imap <C-z> <ESC><C-z>
 else
     let mapleader="~"
     imap <leader>'' ``<Left>
     imap <leader>'p ```python<CR><CR>```<Up>
     map <leader>r :call RunPro()<CR>
     imap <leader>r <Esc>:call RunPro()<CR>
-    map <leader>f :ALEFix<CR>
+    map <leader>f :w<CR>
 endif
 
 if has("gui_running")
@@ -170,6 +171,8 @@ let g:ale_fixers = {
 \}
 let g:ale_completion_enabled = 0
 let g:ale_lint_on_enter = 0
+" 在编辑其他人的项目时，手动关闭ALE
+let g:ale_fix_on_save = 1
 if has("gui_running")
     let g:ale_set_signs=0
     let g:ale_set_balloons=1
@@ -195,7 +198,7 @@ endfunction"}}}
 if has("python3")
     exec 'pa vim-snippets'
     exec 'pa ultisnips'
-    let g:UltiSnipsExpandTrigger="<c-z>"
+    let g:UltiSnipsExpandTrigger="<C-q>"
     let g:UltiSnipsJumpForwardTrigger="<c-p>"
     let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 endif
