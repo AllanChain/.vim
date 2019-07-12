@@ -48,7 +48,7 @@ set foldmethod=marker
 "}}}
 colorscheme NeoSolarized
 set updatetime=700
-
+"Keyboard Shortcuts{{{
 if winwidth('%') > 60
     set nu
     exec 'pa undotree'
@@ -74,13 +74,14 @@ else
     imap <leader>r <Esc>:call RunProLinux()<CR>
     map <leader>f :w<CR>
 endif
-
+"}}}
+"GUI menu ZH fix{{{
 if has("gui_running")
     set langmenu=zh_CN.UTF-8                 "设置菜单语言
     source $VIMRUNTIME/delmenu.vim    "导入删除菜单脚本，删除乱码的菜单
     source $VIMRUNTIME/menu.vim          "导入正常的菜单脚本
     language messages zh_CN.utf-8          "设置提示信息语言
-endif
+endif"}}}
 " 设置gitgutter颜色{{{
 "let g:gitgutter_override_sign_column_highlight = 0
 "highlight SignColumn ctermbg=0
@@ -220,10 +221,11 @@ function! MyHTMLComplete(findstart, base)
 		endif
 	endfor
 endfunction"}}}
+"UltiSnips Setup{{{
 if has("python3")
     exec 'pa vim-snippets'
     exec 'pa ultisnips'
     let g:UltiSnipsExpandTrigger="<C-q>"
     let g:UltiSnipsJumpForwardTrigger="<c-p>"
     let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-endif
+endif"}}}
