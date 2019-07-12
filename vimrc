@@ -99,7 +99,7 @@ au FileType python setlocal complete+=k~/.vim/words/python.txt
 "}}}
 " 处理预览窗口{{{
 "set completeopt-=preview
-autocmd CompleteDone * pclose
+autocmd InsertLeave * pclose
 set previewheight=9
 au BufEnter ?* call PreviewHeightWorkAround()
 func! PreviewHeightWorkAround()
