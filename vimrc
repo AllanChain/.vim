@@ -48,30 +48,40 @@ set foldmethod=marker
 "}}}
 colorscheme NeoSolarized
 set updatetime=700
-
+"Keyboard Shortcuts{{{
 if winwidth('%') > 60
     set nu
     exec 'pa undotree'
-    map <F5> :call RunPro()<CR>
-    imap <F5> <Esc>:call RunPro()<CR>
+    if has("gui_running")
+        map <F5> :call RunProWin()<CR>
+        imap <F5> <Esc>:call RunProWin()<CR>
+    else
+        map <F5> :call RunProLinux()<CR>
+        imap <F5> <Esc>:call RunProLinux()<CR>
+    endif
     imap <C-v> <Esc>"+pa
     map <C-s> :w<CR>
     imap <C-z> <ESC><C-z>
+    let mapleader=","
+    map <leader>v :e $HOME/.vim/vimrc<CR>
+    map <leader>s :source $HOME/.vim/vimrc<CR>
+    map <leader>a :let g:ale_fix_on_save=0<CR>
 else
     let mapleader="~"
     imap <leader>'' ``<Left>
     imap <leader>'p ```python<CR><CR>```<Up>
-    map <leader>r :call RunPro()<CR>
-    imap <leader>r <Esc>:call RunPro()<CR>
+    map <leader>r :call RunProLinux()<CR>
+    imap <leader>r <Esc>:call RunProLinux()<CR>
     map <leader>f :w<CR>
 endif
-
+"}}}
+"GUI menu ZH fix{{{
 if has("gui_running")
     set langmenu=zh_CN.UTF-8          "设置菜单语言
     source $VIMRUNTIME/delmenu.vim    "导入删除菜单脚本，删除乱码的菜单
     source $VIMRUNTIME/menu.vim       "导入正常的菜单脚本
     language messages zh_CN.utf-8     "设置提示信息语言
-endif
+endif"}}}
 " 设置gitgutter颜色{{{
 "let g:gitgutter_override_sign_column_highlight = 0
 "highlight SignColumn ctermbg=0
@@ -89,10 +99,10 @@ au FileType python setlocal complete+=k~/.vim/words/python.txt
 "}}}
 " 处理预览窗口{{{
 "set completeopt-=preview
-autocmd CompleteDone * pclose
+autocmd InsertLeave * pclose
 set previewheight=9
 au BufEnter ?* call PreviewHeightWorkAround()
-func PreviewHeightWorkAround()
+func! PreviewHeightWorkAround()
     if &previewwindow
         exec 'setlocal winheight='.&previewheight
     endif
@@ -140,7 +150,7 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 "}}}
 "Quickly Run{{{
-func! RunPro()
+func! RunProWin()
     exec "w"
     if &filetype == 'c'
         exec "!g++ % -o %< && %<"
@@ -157,6 +167,25 @@ func! RunPro()
         exec "!go run %"
     endif
 endfunc
+
+func! RunProLinux()
+    exec "w"
+    if &filetype == 'c'
+        exec "!g++ % -o %< && time ./%<"
+    elseif &filetype == 'cpp'
+        exec "!g++ % -o %< && time ./%<"
+    elseif &filetype == 'java'
+        exec "!javac %"
+        exec "!time java %<"
+    elseif &filetype == 'sh'
+        exec "!time bash %"
+    elseif &filetype == 'python'
+        exec "!time python3 %"
+    elseif &filetype == 'go'
+        exec "!time go run %"
+    endif
+endfunc
+
 "}}}
 " ALE设置{{{
 let g:ale_lint_on_text_changed=0
@@ -192,10 +221,11 @@ function! MyHTMLComplete(findstart, base)
 		endif
 	endfor
 endfunction"}}}
+"UltiSnips Setup{{{
 if has("python3")
     exec 'pa vim-snippets'
     exec 'pa ultisnips'
     let g:UltiSnipsExpandTrigger="<C-q>"
     let g:UltiSnipsJumpForwardTrigger="<c-p>"
     let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-endif
+endif"}}}
