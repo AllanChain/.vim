@@ -31,9 +31,6 @@
 [submodule "pack/dist/start/vim-startify"]
 	path = pack/dist/start/vim-startify
 	url = https://github.com/mhinz/vim-startify.git
-[submodule "pack/dist/start/cheat.sh-vim"]
-	path = pack/dist/start/cheat.sh-vim
-	url = https://github.com/dbeniamine/cheat.sh-vim
 [submodule "pack/dist/opt/ultisnips"]
 	path = pack/dist/opt/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
