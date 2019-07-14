@@ -15,6 +15,7 @@ autocmd FileType javascript,html,css,xml set sw=2
 autocmd FileType javascript,html,css,xml set ts=2
 autocmd FileType javascript,html,css,xml set sts=2
 "}}}
+autocmd FileType kivy setlocal commentstring=#\ %s
 " set nowrap "不自动折行
 set mouse=a
 " set nu
