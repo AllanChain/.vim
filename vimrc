@@ -62,6 +62,7 @@ if winwidth('%') > 60
     endif
     imap <C-v> <Esc>"+pa
     map <C-s> :w<CR>
+    imap <C-s> <Esc>:w<CR>
     imap <C-z> <ESC><C-z>
     let mapleader=","
     map <leader>v :e $HOME/.vim/vimrc<CR>
