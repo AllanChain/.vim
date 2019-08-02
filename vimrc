@@ -4,6 +4,7 @@ source $VIMRUNTIME/defaults.vim
 set encoding=utf-8
 set fileencodings=utf-8,gbk,gb18030,ucs-bom,cp936
 set termencoding=utf-8
+set ffs=unix,dos
 " 设置Tab键的宽度{{{
 set autoindent
 set smartindent
