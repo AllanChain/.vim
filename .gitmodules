@@ -37,3 +37,6 @@
 [submodule "pack/dist/opt/vim-snippets"]
 	path = pack/dist/opt/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "pack/dist/start/html5.vim"]
+	path = pack/dist/start/html5.vim
+	url = https://github.com/othree/html5.vim.git
