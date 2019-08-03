@@ -13,9 +13,6 @@
 [submodule "pack/dist/start/indentLine"]
 	path = pack/dist/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
-[submodule "pack/dist/start/VimCompletesMe"]
-	path = pack/dist/start/VimCompletesMe
-	url = https://github.com/ajh17/VimCompletesMe.git
 [submodule "pack/dist/start/nerdtree"]
 	path = pack/dist/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -40,3 +37,12 @@
 [submodule "pack/dist/start/html5.vim"]
 	path = pack/dist/start/html5.vim
 	url = https://github.com/othree/html5.vim.git
+[submodule "pack/dist/start/csv.vim"]
+	path = pack/dist/start/csv.vim
+	url = https://github.com/chrisbra/csv.vim
+[submodule "pack/dist/opt/completor.vim"]
+	path = pack/dist/opt/completor.vim
+	url = https://github.com/maralla/completor.vim
+[submodule "pack/dist/opt/VimCompletesMe"]
+	path = pack/dist/opt/VimCompletesMe
+	url = https://github.com/ajh17/VimCompletesMe
