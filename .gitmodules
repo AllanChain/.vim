@@ -46,3 +46,6 @@
 [submodule "pack/dist/opt/VimCompletesMe"]
 	path = pack/dist/opt/VimCompletesMe
 	url = https://github.com/ajh17/VimCompletesMe
+[submodule "pack/dist/start/asyncrun.vim"]
+	path = pack/dist/start/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim

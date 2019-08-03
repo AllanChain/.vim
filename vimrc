@@ -70,7 +70,8 @@ if winwidth('%') > 60
     let mapleader=","
     map <leader>v :e $HOME/.vim/vimrc<CR>
     map <leader>s :source $HOME/.vim/vimrc<CR>
-    map <leader>a :let g:ale_fix_on_save=0<CR>
+    map <leader>a :let g:ale_fix_on_save=1<CR>
+    map <leader>f :silent !autopep8 -i % && isort %<CR>
 else
     let mapleader="~"
     imap <leader>'' ``<Left>
@@ -202,8 +203,9 @@ let g:ale_fixers = {
 \}
 let g:ale_completion_enabled = 0
 let g:ale_lint_on_enter = 0
-" 在编辑其他人的项目时，手动关闭ALE
-let g:ale_fix_on_save = 1
+" ~~在编辑其他人的项目时，手动关闭ALE~~
+" 不如手动开启
+let g:ale_fix_on_save = 0
 if has("gui_running")
     let g:ale_set_signs=0
     let g:ale_set_balloons=1
