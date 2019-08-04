@@ -1,9 +1,11 @@
 set nocompatible
 source $VIMRUNTIME/defaults.vim
+syntax on " Fix csv plugin error
 " 设置编码
 set encoding=utf-8
 set fileencodings=utf-8,gbk,gb18030,ucs-bom,cp936
 set termencoding=utf-8
+set ffs=unix,dos
 " 设置Tab键的宽度{{{
 set autoindent
 set smartindent
@@ -57,17 +59,20 @@ if winwidth('%') > 60
     if has("gui_running")
         map <F5> :call RunProWin()<CR>
         imap <F5> <Esc>:call RunProWin()<CR>
+        set lines=25 columns=86
     else
         map <F5> :call RunProLinux()<CR>
         imap <F5> <Esc>:call RunProLinux()<CR>
     endif
     imap <C-v> <Esc>"+pa
     map <C-s> :w<CR>
+    imap <C-s> <Esc>:w<CR>
     imap <C-z> <ESC><C-z>
     let mapleader=","
     map <leader>v :e $HOME/.vim/vimrc<CR>
     map <leader>s :source $HOME/.vim/vimrc<CR>
-    map <leader>a :let g:ale_fix_on_save=0<CR>
+    map <leader>a :let g:ale_fix_on_save=1<CR>
+    map <leader>f :silent !autopep8 -i % && isort %<CR>
 else
     let mapleader="~"
     imap <leader>'' ``<Left>
@@ -97,7 +102,7 @@ let g:indentLine_color_term = 239
 " autocmd FileType python let b:vcm_tab_complete = 'omni'
 autocmd FileType html let b:vcm_tab_complete = 'omni'
 autocmd FileType vim let b:vcm_tab_complete = 'vim'
-au FileType python setlocal complete+=k~/.vim/words/python.txt
+" au FileType python setlocal complete+=k~/.vim/words/python.txt
 "}}}
 " 处理预览窗口{{{
 "set completeopt-=preview
@@ -147,7 +152,7 @@ let g:airline_mode_map = {
 au BufReadPost * exe "normal! g`\""
 "}}}
 " NERDTree快捷键，自动打开{{{
-map <C-n> :NERDTreeToggle<CR>
+map <F2> :NERDTreeToggle<CR>
 " autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 "}}}
@@ -199,8 +204,9 @@ let g:ale_fixers = {
 \}
 let g:ale_completion_enabled = 0
 let g:ale_lint_on_enter = 0
-" 在编辑其他人的项目时，手动关闭ALE
-let g:ale_fix_on_save = 1
+" ~~在编辑其他人的项目时，手动关闭ALE~~
+" 不如手动开启
+let g:ale_fix_on_save = 0
 if has("gui_running")
     let g:ale_set_signs=0
     let g:ale_set_balloons=1
@@ -230,4 +236,37 @@ if has("python3")
     let g:UltiSnipsExpandTrigger="<C-q>"
     let g:UltiSnipsJumpForwardTrigger="<c-p>"
     let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+    exec 'pa completor.vim'
+    " Tab behavior Setup{{{
+    " Use TAB to complete when typing words, else inserts TABs as usual.  Uses
+    " dictionary, source files, and completor to find matching words to complete.
+
+    " Note: usual completion is on <C-n> but more trouble to press all the time.
+    " Never type the same word twice and maybe learn a new spellings!
+    " Use the Linux dictionary when spelling is in doubt.
+    function! Tab_Or_Complete() abort
+      " If completor is already open the `tab` cycles through suggested completions.
+      if pumvisible()
+        return "\<C-N>"
+      " If completor is not open and we are in the middle of typing a word then
+      " `tab` opens completor menu.
+      elseif col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^[[:keyword:][:ident:]]'
+        return "\<C-R>=completor#do('complete')\<CR>"
+      else
+        " If we aren't typing a word and we press `tab` simply do the normal `tab`
+        " action.
+        return "\<Tab>"
+      endif
+    endfunction
+
+    " Use `tab` key to select completions.  Default is arrow keys.
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+    " Use tab to trigger auto completion.  Default suggests completions as you type.
+    " let g:completor_auto_trigger = 0
+    inoremap <expr> <Tab> Tab_Or_Complete()
+    "}}}
+else
+    exec 'pa VimCompletesMe'
 endif"}}}
