@@ -13,9 +13,9 @@ set expandtab " Tab转空格
 set tabstop=4 " 统一缩进为4
 set shiftwidth=4 "自动缩进长度
 set softtabstop=4
-autocmd FileType javascript,html,css,xml set sw=2
-autocmd FileType javascript,html,css,xml set ts=2
-autocmd FileType javascript,html,css,xml set sts=2
+autocmd FileType javascript,html,htmldjango,css,xml set sw=2
+autocmd FileType javascript,html,htmldjango,css,xml set ts=2
+autocmd FileType javascript,html,htmldjango,css,xml set sts=2
 "}}}
 autocmd FileType kivy setlocal commentstring=#\ %s
 " set nowrap "不自动折行
