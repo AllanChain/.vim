@@ -51,6 +51,7 @@ set foldmethod=marker
 "    \|  endif
 "}}}
 colorscheme NeoSolarized
+set background=dark
 set updatetime=700
 "Keyboard Shortcuts{{{
 if winwidth('%') > 60
