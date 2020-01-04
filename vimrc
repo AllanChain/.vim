@@ -13,9 +13,9 @@ set expandtab " Tab转空格
 set tabstop=4 " 统一缩进为4
 set shiftwidth=4 "自动缩进长度
 set softtabstop=4
-autocmd FileType javascript,html,htmldjango,css,xml set sw=2
-autocmd FileType javascript,html,htmldjango,css,xml set ts=2
-autocmd FileType javascript,html,htmldjango,css,xml set sts=2
+autocmd FileType javascript,html,htmldjango,css,xml,scss set sw=2
+autocmd FileType javascript,html,htmldjango,css,xml,scss set ts=2
+autocmd FileType javascript,html,htmldjango,css,xml,scss set sts=2
 "}}}
 autocmd FileType kivy setlocal commentstring=#\ %s
 set termguicolors
@@ -54,6 +54,11 @@ colorscheme NeoSolarized
 set background=dark
 set updatetime=700
 "Keyboard Shortcuts{{{
+" for i in range(97,122)
+"   let c = nr2char(i)
+"   exec "map \e".c." <M-".c.">"
+"   exec "map! \e".c." <M-".c.">"
+" endfor
 if winwidth('%') > 60
     set nu
     exec 'pa undotree'
@@ -82,6 +87,9 @@ else
     imap <leader>r <Esc>:call RunProLinux()<CR>
     map <leader>f :w<CR>
 endif
+imap jj <Esc>
+map <space>= mLggVG='L
+map <space>s :w<CR>
 "}}}
 "GUI menu ZH fix{{{
 if has("gui_running")
@@ -129,17 +137,17 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 "}}}
 " 隐藏warning,error{{{
 let g:airline#extensions#default#section_truncate_width = {
-    \ 'warning': 60,
-    \ 'error': 60,
-    \ 'x': 60,
-    \ 'y': 60}
+            \ 'warning': 60,
+            \ 'error': 60,
+            \ 'x': 60,
+            \ 'y': 60}
 "}}}
 " 设置Airline模式别名{{{
 let g:airline_mode_map = {
-    \ 'c': 'C',
-    \ 'n': 'N',
-    \ 'V': 'V',
-    \ 'i':'I'}
+            \ 'c': 'C',
+            \ 'n': 'N',
+            \ 'V': 'V',
+            \ 'i':'I'}
 "}}}
 " 回到上次退出位置{{{
 "au BufReadPost * if line("`\"") > 1 && line("`\"") <= line("$") | exe "normal! g`\""
@@ -192,11 +200,11 @@ endfunc
 " ALE设置{{{
 let g:ale_lint_on_text_changed=0
 let g:ale_linters = {
-\   'python': ['flake8', 'pyflakes', 'pylint'],
-\}
+            \   'python': ['flake8', 'pyflakes', 'pylint'],
+            \}
 let g:ale_fixers = {
-\   'python': ['autopep8', 'yapf', 'isort'],
-\}
+            \   'python': ['autopep8', 'yapf', 'isort'],
+            \}
 let g:ale_completion_enabled = 0
 let g:ale_lint_on_enter = 0
 " ~~在编辑其他人的项目时，手动关闭ALE~~
@@ -210,25 +218,25 @@ endif
 " html自动js,css补全{{{
 au FileType html setlocal omnifunc=MyHTMLComplete
 function! MyHTMLComplete(findstart, base)
-	for id in synstack(line('.'), col('.'))
+    for id in synstack(line('.'), col('.'))
         let lang_type=synIDattr(id, 'name')
-		if lang_type =~? 'javascript'
+        if lang_type =~? 'javascript'
             return javascriptcomplete#CompleteJS(a:findstart,a:base)
-			break
+            break
         elseif lang_type =~? 'css'
             return csscomplete#CompleteCSS(a:findstart,a:base)
-			break
+            break
         elseif lang_type =~? 'html'
             return htmlcomplete#CompleteTags(a:findstart,a:base)
-			break
-		endif
-	endfor
+            break
+        endif
+    endfor
 endfunction"}}}
 "UltiSnips Setup{{{
 if has("python3")
     exec 'pa vim-snippets'
     exec 'pa ultisnips'
-    let g:UltiSnipsExpandTrigger="<C-q>"
+    let g:UltiSnipsExpandTrigger="<leader>q"
     let g:UltiSnipsJumpForwardTrigger="<c-p>"
     let g:UltiSnipsJumpBackwardTrigger="<c-b>"
     " exec 'pa completor.vim'

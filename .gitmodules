@@ -34,9 +34,6 @@
 [submodule "pack/dist/opt/vim-snippets"]
 	path = pack/dist/opt/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule "pack/dist/start/csv.vim"]
-	path = pack/dist/start/csv.vim
-	url = https://github.com/chrisbra/csv.vim
 [submodule "pack/dist/opt/completor.vim"]
 	path = pack/dist/opt/completor.vim
 	url = https://github.com/maralla/completor.vim
@@ -58,3 +55,6 @@
 [submodule "pack/dist/start/vim-polyglot"]
 	path = pack/dist/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
+[submodule "pack/dist/start/vim-css-color"]
+	path = pack/dist/start/vim-css-color
+	url = https://github.com/ap/vim-css-color
