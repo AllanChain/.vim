@@ -13,9 +13,12 @@ set expandtab " Tab转空格
 set tabstop=4 " 统一缩进为4
 set shiftwidth=4 "自动缩进长度
 set softtabstop=4
-autocmd FileType javascript,html,htmldjango,css,xml,scss set sw=2
-autocmd FileType javascript,html,htmldjango,css,xml,scss set ts=2
-autocmd FileType javascript,html,htmldjango,css,xml,scss set sts=2
+func! SetTab()
+    setlocal sw=2
+    setlocal ts=2
+    setlocal sts=2
+endfunc
+autocmd FileType javascript,html,htmldjango,css,xml,scss,vue call SetTab()
 "}}}
 autocmd FileType kivy setlocal commentstring=#\ %s
 set termguicolors
