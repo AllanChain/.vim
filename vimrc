@@ -210,9 +210,12 @@ endfunc
 let g:ale_lint_on_text_changed=0
 let g:ale_linters = {
             \   'python': ['flake8', 'pyflakes', 'pylint'],
+            \   'javascript': ['eslint'],
             \}
 let g:ale_fixers = {
             \   'python': ['autopep8', 'yapf', 'isort'],
+            \   'javascript': ['prettier', 'eslint'],
+            \   'vue': ['prettier', 'eslint'],
             \}
 let g:ale_completion_enabled = 0
 let g:ale_lint_on_enter = 0
