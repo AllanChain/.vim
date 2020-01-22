@@ -20,6 +20,12 @@ func! SetTab()
 endfunc
 autocmd FileType javascript,html,htmldjango,css,xml,scss,vue call SetTab()
 "}}}
+func! JSFold()
+    setlocal foldmethod=syntax
+    setlocal foldenable
+    setlocal foldlevel=2
+endfunc
+autocmd FileType vue call JSFold()
 autocmd FileType kivy setlocal commentstring=#\ %s
 set termguicolors
 " set nowrap "不自动折行
