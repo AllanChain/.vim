@@ -43,3 +43,12 @@
 [submodule "pack/dist/start/vim-css-color"]
 	path = pack/dist/start/vim-css-color
 	url = https://github.com/ap/vim-css-color
+[submodule "pack/dist/start/undotree"]
+	path = pack/dist/start/undotree
+	url = https://github.com/mbbill/undotree
+[submodule "pack/dist/start/vim-snippets"]
+	path = pack/dist/start/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "pack/dist/start/ultisnips"]
+	path = pack/dist/start/ultisnips
+	url = https://github.com/SirVer/ultisnips
