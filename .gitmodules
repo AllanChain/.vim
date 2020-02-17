@@ -19,27 +19,12 @@
 [submodule "pack/dist/start/vim-gitgutter"]
 	path = pack/dist/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "pack/dist/opt/undotree"]
-	path = pack/dist/opt/undotree
-	url = https://github.com/mbbill/undotree.git
 [submodule "pack/dist/start/mru"]
 	path = pack/dist/start/mru
 	url = https://github.com/yegappan/mru.git
 [submodule "pack/dist/start/vim-startify"]
 	path = pack/dist/start/vim-startify
 	url = https://github.com/mhinz/vim-startify.git
-[submodule "pack/dist/opt/ultisnips"]
-	path = pack/dist/opt/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
-[submodule "pack/dist/opt/vim-snippets"]
-	path = pack/dist/opt/vim-snippets
-	url = https://github.com/honza/vim-snippets.git
-[submodule "pack/dist/opt/completor.vim"]
-	path = pack/dist/opt/completor.vim
-	url = https://github.com/maralla/completor.vim
-[submodule "pack/dist/opt/VimCompletesMe"]
-	path = pack/dist/opt/VimCompletesMe
-	url = https://github.com/ajh17/VimCompletesMe
 [submodule "pack/dist/start/asyncrun.vim"]
 	path = pack/dist/start/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim
