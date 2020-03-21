@@ -1,54 +1,54 @@
-[submodule "pack/dist/start/ale"]
+[submodule "ale"]
 	path = pack/essential/start/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "pack/dist/start/commentary"]
+[submodule "commentary"]
 	path = pack/essential/start/commentary
 	url = https://tpope.io/vim/commentary.git
-[submodule "pack/dist/start/vim-airline"]
+[submodule "vim-airline"]
 	path = pack/essential/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
-[submodule "pack/dist/start/vim-airline-themes"]
+[submodule "vim-airline-themes"]
 	path = pack/essential/start/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "pack/dist/start/indentLine"]
+[submodule "indentLine"]
 	path = pack/essential/start/indentLine
 	url = https://github.com/Yggdroot/indentLine.git
-[submodule "pack/dist/start/nerdtree"]
+[submodule "nerdtree"]
 	path = pack/essential/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "pack/dist/start/vim-gitgutter"]
+[submodule "vim-gitgutter"]
 	path = pack/essential/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "pack/dist/start/mru"]
+[submodule "mru"]
 	path = pack/essential/start/mru
 	url = https://github.com/yegappan/mru.git
-[submodule "pack/dist/start/vim-startify"]
+[submodule "vim-startify"]
 	path = pack/essential/start/vim-startify
 	url = https://github.com/mhinz/vim-startify.git
-[submodule "pack/dist/start/asyncrun.vim"]
+[submodule "asyncrun.vim"]
 	path = pack/dist/start/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim
-[submodule "pack/tpope/start/surround"]
+[submodule "surround"]
 	path = pack/essential/start/surround
 	url = https://tpope.io/vim/surround.git
-[submodule "pack/ycm/start/YouCompleteMe"]
+[submodule "YouCompleteMe"]
 	path = pack/ycm/start/YouCompleteMe
 	url = https://github.com/ycm-core/YouCompleteMe.git
-[submodule "pack/python-mode/start/python-mode"]
+[submodule "python-mode"]
 	path = pack/essential/start/python-mode
 	url = https://github.com/python-mode/python-mode.git
-[submodule "pack/dist/start/vim-polyglot"]
+[submodule "vim-polyglot"]
 	path = pack/essential/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
-[submodule "pack/dist/start/vim-css-color"]
+[submodule "vim-css-color"]
 	path = pack/essential/start/vim-css-color
 	url = https://github.com/ap/vim-css-color
-[submodule "pack/dist/start/undotree"]
+[submodule "undotree"]
 	path = pack/essential/start/undotree
 	url = https://github.com/mbbill/undotree
-[submodule "pack/dist/start/vim-snippets"]
+[submodule "vim-snippets"]
 	path = pack/essential/start/vim-snippets
 	url = https://github.com/honza/vim-snippets
-[submodule "pack/dist/start/ultisnips"]
+[submodule "ultisnips"]
 	path = pack/essential/start/ultisnips
 	url = https://github.com/SirVer/ultisnips
