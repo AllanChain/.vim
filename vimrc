@@ -183,7 +183,6 @@ let g:UltiSnipsExpandTrigger="<leader>q"
 let g:UltiSnipsJumpForwardTrigger="<c-p>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
-let g:vimrc_local = $HOME . "/.vim/vimrc.local"
-if filereadable(g:vimrc_local)
-    source g:vimrc_local
+if filereadable($HOME . "/.vim/vimrc.local")
+    source $HOME/.vim/vimrc.local
 endif
