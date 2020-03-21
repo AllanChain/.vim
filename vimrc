@@ -178,7 +178,12 @@ function! MyHTMLComplete(findstart, base)
         endif
     endfor
 endfunction"}}}
-let g:pymode_rope_completion = 0
+let g:pymode_rope_completion = 1
 let g:UltiSnipsExpandTrigger="<leader>q"
 let g:UltiSnipsJumpForwardTrigger="<c-p>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+
+let g:vimrc_local = $HOME . "/.vim/vimrc.local"
+if filereadable(g:vimrc_local)
+    source g:vimrc_local
+endif
