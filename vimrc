@@ -57,6 +57,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 set background=dark " Terminal Compatible
+let g:solarized_italics=0  " 斜体中文很难受
 colorscheme solarized8
 "}}}
 " 设置备份，自动保存等{{{
