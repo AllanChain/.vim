@@ -31,9 +31,6 @@
 [submodule "pack/tpope/start/surround"]
 	path = pack/essential/start/surround
 	url = https://tpope.io/vim/surround.git
-[submodule "pack/ycm/start/YouCompleteMe"]
-	path = pack/ycm/start/YouCompleteMe
-	url = https://github.com/ycm-core/YouCompleteMe.git
 [submodule "pack/python-mode/start/python-mode"]
 	path = pack/essential/start/python-mode
 	url = https://github.com/python-mode/python-mode.git
