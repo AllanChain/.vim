@@ -9,8 +9,6 @@ set cursorline
 set foldmethod=marker
 set updatetime=700
 set nu
-set background=dark " Terminal Compatible
-colorscheme NeoSolarized
 let g:indentLine_concealcursor=""
 let g:indentLine_conceallevel=1
 
@@ -52,13 +50,15 @@ func! JSFold()
 endfunc
 autocmd FileType vue call JSFold()
 "}}}
-" Tmux comaptible{{{
+" Color{{{
 if exists("$TMUX")
     set t_Co=256
     set notermguicolors
 else
     set termguicolors
 endif
+set background=dark " Terminal Compatible
+colorscheme solarized8
 "}}}
 " 设置备份，自动保存等{{{
 "set nobackup

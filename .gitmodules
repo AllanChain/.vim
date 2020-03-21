@@ -52,3 +52,6 @@
 [submodule "ultisnips"]
 	path = pack/essential/start/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "pack/themes/opt/vim-solarized8"]
+	path = pack/themes/opt/vim-solarized8
+	url = https://github.com/lifepillar/vim-solarized8
