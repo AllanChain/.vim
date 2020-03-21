@@ -14,6 +14,7 @@ colorscheme NeoSolarized
 let g:indentLine_concealcursor=""
 let g:indentLine_conceallevel=1
 
+autocmd InsertLeave * pclose
 autocmd FileType kivy setlocal commentstring=#\ %s
 " 设置编码{{{
 set encoding=utf-8
@@ -25,9 +26,9 @@ set ffs=unix,dos
 set autoindent
 set smartindent
 set expandtab " Tab转空格
-set tabstop=4 " 统一缩进为4
-set shiftwidth=4 "自动缩进长度
-set softtabstop=4
+setlocal tabstop=4 " 统一缩进为4
+setlocal shiftwidth=4 "自动缩进长度
+setlocal softtabstop=4
 func! SetTab()
     setlocal sw=2
     setlocal ts=2
