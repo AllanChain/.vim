@@ -22,6 +22,14 @@ set fileencodings=utf-8,gbk,gb18030,ucs-bom,cp936
 set termencoding=utf-8
 set ffs=unix,dos
 "}}}
+"GUI menu ZH fix{{{
+if has("gui_running")
+    set langmenu=zh_CN.UTF-8          "设置菜单语言
+    source $VIMRUNTIME/delmenu.vim    "导入删除菜单脚本，删除乱码的菜单
+    source $VIMRUNTIME/menu.vim       "导入正常的菜单脚本
+    language messages zh_CN.utf-8     "设置提示信息语言
+endif
+"}}}
 " 设置Tab键的宽度{{{
 set autoindent
 set smartindent
